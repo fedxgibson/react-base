@@ -1,0 +1,19 @@
+{
+  "name": "react-base",
+  "version": "0.0.0",
+  "homepage": "https://github.com/fedxgibson/react-base",
+  "authors": [
+    "Federico <fed.x.gibson@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6"
+  }
+}

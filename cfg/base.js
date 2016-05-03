@@ -29,6 +29,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
+    modulesDirectories: ['node_modules', 'bower_components', 'web_modules'],
     alias: {
       actions: `${defaultSettings.srcPath}/actions/`,
       components: `${defaultSettings.srcPath}/components/`,
