@@ -34,8 +34,11 @@ module.exports = {
       actions: `${defaultSettings.srcPath}/actions/`,
       components: `${defaultSettings.srcPath}/components/`,
       sources: `${defaultSettings.srcPath}/sources/`,
+      dispatcher: `${defaultSettings.srcPath}/dispatcher/`,
+      constants: `${defaultSettings.srcPath}/constants/`,
       stores: `${defaultSettings.srcPath}/stores/`,
       styles: `${defaultSettings.srcPath}/styles/`,
+      services: `${defaultSettings.srcPath}/services/`,
       config: `${defaultSettings.srcPath}/config/` + process.env.REACT_WEBPACK_ENV
     }
   },

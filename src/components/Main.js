@@ -1,29 +1,36 @@
 require('normalize.css/normalize.css');
 require('styles/App.scss');
 
-import React from 'react';
-
+import {Container} from 'flux/utils';
+import React, {Component} from 'react';
+import ReposStore from 'stores/ReposStore';
+import Actions from 'actions/AppActions';
+import ReposService from 'services/ReposService';
+import MainSection from 'components/MainSection'
 let yeomanImage = require('../images/yeoman.png');
 let Button = require('react-bootstrap').Button;
 
-class AppComponent extends React.Component {
+setTimeout(ReposService.getAllRepositories, 2000);
 
-  buttonClicked(){
-    console.log('clicked');
+
+class AppComponent extends Component {
+
+  static getStores() {
+    return [ReposStore];
+  }
+
+  static calculateState(prevState) {
+    return {
+      repos: ReposStore.getState()
+    }
   }
 
   render() {
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit helo<code>src/components/Main.js</code> to get started!</div>
-        <Button bsStyle="primary" onClick={this.buttonClicked}>Primary</Button>
-      </div>
+      <MainSection repos={this.state.repos}/>
     );
   }
 }
 
-AppComponent.defaultProps = {
-};
-
-export default AppComponent;
+const AppContainer = Container.create(AppComponent);
+export default AppContainer;
